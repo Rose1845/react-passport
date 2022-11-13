@@ -1,5 +1,5 @@
 import React from 'react'
-import '../app.css'
+import '../styles/app.css';
 import { posts } from '../data'
 const Post = () => {
 
