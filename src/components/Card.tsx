@@ -1,6 +1,12 @@
 import React from 'react'
-import '..styles//app.css'
-const Card = ({post}) => {
+import '../styles/app.css'
+import { IPost } from '../interfaces'
+
+type PropsType = {
+    post:IPost
+}
+
+const Card = ( {post}:PropsType) => {
   return (
     <div className='card'>
         <span className="title">{post.title}</span>

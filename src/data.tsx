@@ -1,5 +1,7 @@
+import { IPost } from "./interfaces";
+
 //import { IPosts } from './interfaces/index'
-export const posts =[
+export const posts:IPost[] =[
     {
         id:1,
         title:'Premium theme for react',

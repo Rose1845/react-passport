@@ -1,18 +1,47 @@
 
 
-//import Footer from './components/Footer'
+import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import Login from './pages/Login'
-//import Home from './pages/Home'
-//import Post from './pages/Post'
+import Layout from './components/Layout'
+//import {BrowserRouter,Routes} from 'react-router-dom'
+import Home from './pages/Home'
+import Post from './pages/Post'
+
+
+import {MapRouter} from 'react-router-map'
+import {IRouteProps} from 'react-router-map/dist/types'
+
+
+const routes: IRouteProps[] = [
+  {
+    pathName: 'Home',
+    urlPath: '/',
+    Component: <Home />,
+    hasChildren: false,
+  },
+  {
+    pathName: 'Post',
+    urlPath: '/post',
+    Component: <Post />,
+    hasChildren: false,
+  },
+  {
+    pathName: 'Login',
+    urlPath: '/login',
+    Component: <Login />,
+    hasChildren: false,
+  },
+  
+]
 function App() {
   
   return (
     <div className="App">
-    <Navbar/>
-    {/* <Home/> */}
-    {/* <Post/> */}
-    <Login/>
+     
+        <Layout>
+        <MapRouter routes={routes} enableTopScroll={false} browserRouter={true} />
+        </Layout>
      
     </div>
   )

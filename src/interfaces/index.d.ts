@@ -1,4 +1,4 @@
-export interface IPosts{
+export interface IPost{
     id:number | string;
     title:string;
     img:url;

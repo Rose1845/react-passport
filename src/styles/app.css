@@ -171,4 +171,6 @@
   }
   .loginTitle{
     position: absolute;
+    top: 150px;
+    color: lightGray;
   }
