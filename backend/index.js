@@ -1,6 +1,8 @@
 const cookieSession = require('cookie-session');
 const express = require('express')
 const app = express()
+const cors = require('cors')
+const passport =require('passport')
 
 app.use(cookieSession({
     name: 'session',
@@ -10,7 +12,7 @@ app.use(cookieSession({
     maxAge: 24 * 60 * 60 * 1000 // 24 hours
   }))
 
-  app.use(passport.initiliaze())
+  app.use(passport.initialize())
   app.use(passport.session())
 
   app.use(cors({
