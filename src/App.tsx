@@ -1,49 +1,28 @@
 
-
-import Footer from './components/Footer'
-import Navbar from './components/Navbar'
 import Login from './pages/Login'
 import Layout from './components/Layout'
-//import {BrowserRouter,Routes} from 'react-router-dom'
+import {BrowserRouter,Routes,Route, Navigate} from 'react-router-dom'
 import Home from './pages/Home'
 import Post from './pages/Post'
 
 
-import {MapRouter} from 'react-router-map'
-import {IRouteProps} from 'react-router-map/dist/types'
-
-
-const routes: IRouteProps[] = [
-  {
-    pathName: 'Home',
-    urlPath: '/',
-    Component: <Home />,
-    hasChildren: false,
-  },
-  {
-    pathName: 'Post',
-    urlPath: '/post',
-    Component: <Post />,
-    hasChildren: false,
-  },
-  {
-    pathName: 'Login',
-    urlPath: '/login',
-    Component: <Login />,
-    hasChildren: false,
-  },
-  
-]
 function App() {
-  
+  const user = false
+
   return (
-    <div className="App">
-     
-        <Layout>
-        <MapRouter routes={routes} enableTopScroll={false} browserRouter={true} />
-        </Layout>
-     
-    </div>
+    <BrowserRouter>
+    <Layout>
+    <Routes>
+      <Route path="/"element={<Home/>}/>
+      <Route 
+      path='/login'
+      element={user ? <Navigate to="/"/>:<Login/>}
+      />
+      <Route path='/post:id'element={user ? <Post/>: <Navigate to='/login'/>} />
+
+    </Routes>
+    </Layout>
+    </BrowserRouter>
   )
 }
 

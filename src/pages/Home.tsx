@@ -6,7 +6,7 @@ const Home = () => {
     <div className='home'>
       {posts.map(post=>(
         <Card key={post.id}post={post}/>
-
+        
       ))}
 
     </div>
