@@ -7,7 +7,7 @@ import Post from './pages/Post'
 
 
 function App() {
-  const user = false
+  const user = true
 
   return (
     <BrowserRouter>
@@ -18,7 +18,7 @@ function App() {
       path='/login'
       element={user ? <Navigate to="/"/>:<Login/>}
       />
-      <Route path='/post:id'element={user ? <Post/>: <Navigate to='/login'/>} />
+      <Route path='/post:id' element={user ? <Post/>: <Navigate to='/login'/>} />
 
     </Routes>
     </Layout>
