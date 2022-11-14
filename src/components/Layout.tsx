@@ -10,7 +10,7 @@ type PropsLayout={
 }
 
 const Layout = ({children}:PropsLayout) => {
-  const user = false
+  const user = true
   return (
     <div>
       <Navbar user={user}/>

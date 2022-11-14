@@ -1,9 +1,14 @@
 import React from 'react'
 import '../styles/app.css';
 import { posts } from '../data'
+import { useLocation } from 'react-router-dom';
 const Post = () => {
+  const location = useLocation()
 
-    const post = posts[2]
+  const path=location.pathname.split("/")[2]
+  const post =posts.find(p=>p.id.toString() === path)
+
+    // const post = posts[2]
   return (
     <div className='post'>
      <img src={post.img} alt="" className="postImg" />
