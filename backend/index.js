@@ -15,7 +15,7 @@ app.use(cookieSession({
 
   app.use(cors({
     origin:"http://localhost:3000",
-    method:"GET, POSR ,PUT , DELETE",
+    method:"GET, POST ,PUT , DELETE",
     credential:true
   }))
 app.listen("5000",()=>{
