@@ -3,6 +3,8 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const passport =require('passport')
+require('./passport')
+const authRoute = require('./routes/auth')
 
 app.use(cookieSession({
     name: 'session',
@@ -20,6 +22,9 @@ app.use(cookieSession({
     method:"GET, POST ,PUT , DELETE",
     credential:true
   }))
+
+app.use('/auth',authRoute)
+
 app.listen("5000",()=>{
     console.log('server running');
 })
