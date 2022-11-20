@@ -3,7 +3,7 @@ import Link from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <div>
+    <div className='footer'>
         <p>made by nyaugenya</p>
             {new Date().getFullYear()}
             {'.'}
