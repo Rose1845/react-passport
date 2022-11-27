@@ -4,24 +4,28 @@ import Layout from './components/Layout'
 import {BrowserRouter,Routes,Route, Navigate} from 'react-router-dom'
 import Home from './pages/Home'
 import Post from './pages/Post'
+import axios from 'axios'
 import { useEffect, useState } from 'react'
 
 
 function App() {
   const [user,setUser] = useState(null)
+  const sucessUrl ="http://localhost:5000/auth/login/success"
+
   useEffect(()=>{
     const getUser = ()=>{
-      fetch("http:localhost:5000/auth/login/success",
+     axios(sucessUrl,
       {
         method:"GET",
-        credentials:"include",
+        // credentials:"include",
         headers:{
           Accept:"application/json",
-          "Content-Type":"application/json",
+          "Access-Control-Allow-Origin": "true",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
 
         }
         // headers:{
-        //   Accept:"application/json",
+        //  
         //   "Content-Type":"application/json",
         //   "Access-Control-Allow-Credentials":true,
         // },
